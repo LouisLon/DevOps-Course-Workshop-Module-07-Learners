@@ -12,6 +12,6 @@ jobs:
     - name: Builds the typescript code
       run: cd ./DotnetTemplate.Web && npm install && npm run build
     - name: Runs the linter on the typescript code
-      run: npm run lint
+      run: cd ./DotnetTemplate.Web && npm run lint
     - name: Runs the typescript tests
-      run: npm t
+      run: cd cd ./DotnetTemplate.Web && npm t
