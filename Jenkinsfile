@@ -1,19 +1,27 @@
 pipeline {
-    agent any
-
+    agent none
     stages {
-        stage('Build') {
+        stage('Dotnet Build') {
+            agent {
+                docker { 
+                    image 'mcr.microsoft.com/dotnet/sdk:3.1' 
+                    args '-u root:root'
+                }
+            }
             steps {
-                echo 'Builds the C# code'
-                sh "dotnet build"
+                sh 'dotnet build'               
+                sh 'dotnet test'
+                
             }
         }
         stage('Test') {
+            agent any
             steps {
                 echo 'Testing..'
             }
         }
         stage('Deploy') {
+            agent any
             steps {
                 echo 'Deploying....'
             }
