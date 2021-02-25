@@ -17,7 +17,9 @@ pipeline {
             }
         }
         stage('Test') {
-            agent docker{ image 'node:14-alpine'}
+            agent {
+                docker{ image 'node:14-alpine'}
+                }
             steps {
                 sh 'cd "./DotnetTemplate.Web"'
                 sh 'npm ci'
