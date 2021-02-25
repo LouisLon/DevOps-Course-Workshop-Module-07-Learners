@@ -9,9 +9,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'dotnet build'               
-                sh 'dotnet test'
-                
+                sh 'dotnet build' 
             }
         }
         stage('Test') {
