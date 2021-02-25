@@ -14,4 +14,4 @@ jobs:
     - name: Runs the linter on the typescript code
       run: cd ./DotnetTemplate.Web && npm run lint
     - name: Runs the typescript tests
-      run: cd cd ./DotnetTemplate.Web && npm t
+      run: cd ./DotnetTemplate.Web && npm t
