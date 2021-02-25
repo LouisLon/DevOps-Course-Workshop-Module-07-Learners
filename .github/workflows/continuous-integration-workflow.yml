@@ -10,4 +10,4 @@ jobs:
     - name: Buid C#
       run: dotnet build
     - name: Buid with npm
-      run: cd ./DotnetTemplate.web && npm install #&& npm run build
+      run: cd ./DotnetTemplate.Web && npm install && npm run build
